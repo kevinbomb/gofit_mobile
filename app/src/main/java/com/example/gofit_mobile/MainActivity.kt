@@ -34,6 +34,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        binding.btnManager.setOnClickListener{
+            val intent = Intent(this@MainActivity, ManagerLoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     fun doLogin(no_member: String, password: String) {

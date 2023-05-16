@@ -34,6 +34,18 @@ class InstrukturLoginActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.btnManager.setOnClickListener{
+            val intent = Intent(this@InstrukturLoginActivity, ManagerLoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        binding.btnForget.setOnClickListener{
+            val intent = Intent(this@InstrukturLoginActivity, InstrukturPasswordActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
     }
 
     fun doLogin(id_instruktur: String, password: String) {

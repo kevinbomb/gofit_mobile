@@ -1,12 +1,20 @@
 package com.example.gofit_mobile.api
 
 import com.example.gofit_mobile.model.Instruktur
+import com.example.gofit_mobile.model.MO
 import com.example.gofit_mobile.model.Member
 import com.example.gofit_mobile.model.Perizinan
 
 data class LoginResponse(
     val message: String,
     val data: Member,
+    val token: String,
+    val kode: String
+)
+
+data class LoginMoResponse(
+    val message: String,
+    val user: MO,
     val token: String,
     val kode: String
 )

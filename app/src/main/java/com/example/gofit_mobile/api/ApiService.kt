@@ -5,12 +5,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.DELETE
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 object ApiConfig {
     fun getApiService(): ApiService {
@@ -36,6 +31,13 @@ interface ApiService{
         @Field("password") password: String
     ): Call<LoginResponse>
 
+    @POST("loginpegawai")
+    @FormUrlEncoded
+    fun loginPegawai (
+        @Field("id_pegawai") id_pegawai: String,
+        @Field("password") password: String
+    ): Call<LoginMoResponse>
+
     @POST("logininstruktur")
     @FormUrlEncoded
     fun loginInstruktur (
@@ -60,4 +62,11 @@ interface ApiService{
     fun getPerizinan(
         @Path("id") id: Long
     ): Call<PerizinanResponse>
+
+    @PUT("instrukturPw")
+    @FormUrlEncoded
+    fun insGantiPw (
+        @Field("ID_INSTRUKTUR") id: String,
+        @Field("new_password") new_pw: String
+    ): Call<GeneralResponse>
 }

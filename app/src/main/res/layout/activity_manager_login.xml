@@ -11,9 +11,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="210dp"
         android:layout_marginTop="15dp"
-        android:text="@string/instruktur"
+        android:text="@string/mo"
         android:textColor="@color/biruTheme"
         android:textSize="25sp" />
 
@@ -64,7 +64,7 @@
             android:translationX="-15dp"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/instruktur" />
+            app:lottie_rawRes="@raw/expert"/>
 
 
     </LinearLayout>
@@ -163,10 +163,10 @@
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnMember"
+                android:id="@+id/btnInstruktur"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="@string/member"
+                android:text="@string/instruktur"
                 android:textSize="17sp"
                 app:backgroundTint="@color/loginButton"
                 app:cornerRadius="20dp" />
@@ -177,11 +177,12 @@
                 android:layout_weight="1"
                 android:background="@android:color/darker_gray" />
 
+
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnManager"
+                android:id="@+id/btnMember"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="@string/mo"
+                android:text="@string/member"
                 android:textSize="17sp"
                 app:backgroundTint="@color/loginButton"
                 app:cornerRadius="20dp" />
