@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                             .apply()
 
                         // Pindah ke halaman home
-                        val intent = Intent(this@MainActivity, HomeActivityIns::class.java)
+                        val intent = Intent(this@MainActivity, HomeActivityMem::class.java)
                         startActivity(intent)
                         finish()
                     }

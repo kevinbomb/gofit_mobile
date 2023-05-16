@@ -15,6 +15,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".HomeActivityMem"
+            android:exported="false" />
+        <activity
+            android:name=".ManagerPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".ManagerLoginActivity"
             android:exported="false" />
         <activity

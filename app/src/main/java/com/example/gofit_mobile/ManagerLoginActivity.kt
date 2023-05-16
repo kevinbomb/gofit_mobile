@@ -42,11 +42,11 @@ class ManagerLoginActivity : AppCompatActivity() {
             finish()
         }
 
-//        binding.btnForget.setOnClickListener{
-//            val intent = Intent(this@ManagerLoginActivity, InstrukturPasswordActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
+        binding.btnForget.setOnClickListener{
+            val intent = Intent(this@ManagerLoginActivity, ManagerPasswordActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
 

@@ -15,7 +15,7 @@ object ApiConfig {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.185.147/apigofit/public/api/")
+            .baseUrl("http://192.168.0.102/apigofit/public/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
@@ -67,6 +67,13 @@ interface ApiService{
     @FormUrlEncoded
     fun insGantiPw (
         @Field("ID_INSTRUKTUR") id: String,
+        @Field("new_password") new_pw: String
+    ): Call<GeneralResponse>
+
+    @PUT("pegawaiPw")
+    @FormUrlEncoded
+    fun pegGantiPw (
+        @Field("id_pegawai") id: String,
         @Field("new_password") new_pw: String
     ): Call<GeneralResponse>
 }
