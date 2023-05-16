@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">gofit_mobile</string>
+    <string name="rental">FIT</string>
+    <string name="member">MEMBER</string>
+    <string name="instruktur">INSTRUKTUR</string>
+    <string name="mo">MANAGER</string>
+    <string name="atma">GO</string>
+    <string name="id">ID</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FF00396c</color>
+    <color name="purple_500">#FF00396c</color>
+    <color name="purple_700">#FF00396c</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="transparant">#00000000</color>
+    <color name="transparant_gambar">#BBFFFFFF</color>
+    <color name="transparant_card">#CCFFFFFF</color>
+    <color name="transparant_card_2">#CC000000</color>
+    <color name="blackOpacity">#99000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="biruTheme">#FFA00BDF</color>
+    <color name="biruThemePressed">#AA00396c</color>
+    <color name="yellowTheme">#FFF9A825</color>
+    <color name="redTheme">#FFdd0000</color>
+    <color name="loginButton">#FF00b124</color>
+    <color name="green_darken_4">#FF1B5E20</color>
+    <color name="red_darken_4">#FFB71C1C</color>
+    <color name="green_lighten_4">#FFC8E6C9</color>
+    <color name="red_lighten_4">#FFFFCDD2</color>
+</resources>

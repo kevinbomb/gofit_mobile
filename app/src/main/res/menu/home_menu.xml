@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/fragmentPerizinan"
+        android:icon="@drawable/ic_baseline_izin_24"
+        android:title="Izin"/>
+    <item android:id="@+id/MenuPresensiKelas"
+        android:icon="@drawable/ic_baseline_checklist_24"
+        android:title="Presensi Kelas"/>
+    <item android:id="@+id/menuProfil"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Profil"/>
+</menu>
