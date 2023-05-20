@@ -15,7 +15,7 @@ object ApiConfig {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.0.102/apigofit/public/api/")
+            .baseUrl("http://192.168.185.147/apigofit/public/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
@@ -58,6 +58,11 @@ interface ApiService{
         @Path("id") id: Long
     ): Call<GeneralResponse>
 
+    @DELETE("presensiKelas/{id}")
+    fun hapusPresensiKelas(
+        @Path("id") id: Long
+    ): Call<GeneralResponse>
+
     @GET("perizinan/{id}")
     fun getPerizinan(
         @Path("id") id: Long
@@ -76,4 +81,21 @@ interface ApiService{
         @Field("id_pegawai") id: String,
         @Field("new_password") new_pw: String
     ): Call<GeneralResponse>
+
+    @GET("presensiKelas/{id}")
+    fun getPresensiKelas(
+        @Path("id") id: String
+    ): Call<PresensiKelasResponse>
+
+    @DELETE("presensiKelas/{id}")
+    fun hapusPresensiKelas(
+        @Path("id") id: String
+    ): Call<GeneralResponse>
+
+    @POST("presensiKelas")
+    @FormUrlEncoded
+    fun createPresensiKelas (
+        @Field("NO_MEMBER") tgl: String,
+        @Field("ID_JADWALH") ket: String
+    ): Call<CreatePresensiKelasResponse>
 }

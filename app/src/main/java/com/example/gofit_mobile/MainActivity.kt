@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                         pref.edit()
                             .putString("TOKEN", responseBody.token)
                             .putString("NAMA", responseBody.data.NAMA_MEMBER)
-                            .putString("ID_MEM", responseBody.data.NO_MEMBER)
+                            .putString("NO_MEM", responseBody.data.NO_MEMBER)
                             .apply()
 
                         // Pindah ke halaman home

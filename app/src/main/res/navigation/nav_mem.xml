@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_mem"
+    app:startDestination="@id/fragmentPresensiKelas">
+
+    <fragment
+        android:id="@+id/fragmentPresensiKelas"
+        android:name="com.example.gofit_mobile.ui_mem.FragmentPresensiKelas"
+        android:label="FragmentPresensiKelas" />
+</navigation>

@@ -6,16 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivityIns">
 
-<!--    <androidx.fragment.app.FragmentContainerView-->
-<!--        android:id="@+id/layout_fragment"-->
-<!--        android:name="androidx.navigation.fragment.NavHostFragment"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/bottomNav"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        app:navGraph="@navigation/nav_ins" />-->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/layout_fragment_mem"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:navGraph="@navigation/nav_mem" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
