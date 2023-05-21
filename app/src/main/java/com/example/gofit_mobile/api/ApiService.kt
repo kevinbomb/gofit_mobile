@@ -15,7 +15,7 @@ object ApiConfig {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.185.147/apigofit/public/api/")
+            .baseUrl("http://192.168.1.15/apigofit/public/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
@@ -98,4 +98,17 @@ interface ApiService{
         @Field("NO_MEMBER") tgl: String,
         @Field("ID_JADWALH") ket: String
     ): Call<CreatePresensiKelasResponse>
+
+    @GET("presensiGym/{id}")
+    fun getPresensiGym(
+        @Path("id") id: String
+    ): Call<PresensiGymResponse>
+
+    @POST("presensiGym")
+    @FormUrlEncoded
+    fun createPresensiGym (
+        @Field("NO_MEMBER") id: String,
+        @Field("TANGGAL_PRESENSIG") tgl: String,
+        @Field("SLOT_WAKTU_PRESENSIG") wkt: String,
+        ): Call<CreatePresensiGymResponse>
 }

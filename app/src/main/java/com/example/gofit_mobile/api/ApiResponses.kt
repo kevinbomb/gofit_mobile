@@ -37,6 +37,11 @@ data class PresensiKelasResponse(
     val data: List<PresensiKelas>
 )
 
+data class PresensiGymResponse(
+    val success: Boolean,
+    val data: List<PresensiGym>
+)
+
 data class CreatePerizinanResponse(
     val success: Boolean,
     val data: Perizinan
@@ -45,4 +50,9 @@ data class CreatePerizinanResponse(
 data class CreatePresensiKelasResponse(
     val message: String,
     val data: PresensiKelas
+)
+
+data class CreatePresensiGymResponse(
+    val message: String,
+    val data: PresensiGym
 )

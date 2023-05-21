@@ -8,4 +8,8 @@
         android:id="@+id/fragmentPresensiKelas"
         android:name="com.example.gofit_mobile.ui_mem.FragmentPresensiKelas"
         android:label="FragmentPresensiKelas" />
+    <fragment
+        android:id="@+id/fragmentPresensiGym"
+        android:name="com.example.gofit_mobile.ui_mem.FragmentPresensiGym"
+        android:label="FragmentPresensiGym" />
 </navigation>

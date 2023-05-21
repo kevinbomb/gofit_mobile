@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/fragmentKelas"
+    <item android:id="@+id/fragmentPresensiKelas"
         android:icon="@drawable/ic_baseline_class_24"
         android:title="Presensi Kelas"/>
-    <item android:id="@+id/fragmentGym"
+    <item android:id="@+id/fragmentPresensiGym"
         android:icon="@drawable/ic_baseline_gym_24"
         android:title="Presensi Gym"/>
     <item android:id="@+id/menuProfil"
