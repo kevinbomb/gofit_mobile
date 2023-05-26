@@ -15,6 +15,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".InfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui_mo.AddPresensiInsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivityMo"
+            android:exported="false" />
+        <activity
             android:name=".ui_mem.AddPresensiGymActivity"
             android:exported="false" />
         <activity

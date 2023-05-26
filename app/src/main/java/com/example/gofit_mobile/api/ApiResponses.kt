@@ -9,6 +9,10 @@ data class LoginResponse(
     val kode: String
 )
 
+data class MemberResponse(
+    val data: Member
+)
+
 data class LoginMoResponse(
     val message: String,
     val user: MO,
@@ -42,6 +46,11 @@ data class PresensiGymResponse(
     val data: List<PresensiGym>
 )
 
+data class PresensiInsResponse(
+    val success: Boolean,
+    val data: List<PresensiInstruktur>
+)
+
 data class CreatePerizinanResponse(
     val success: Boolean,
     val data: Perizinan
@@ -55,4 +64,9 @@ data class CreatePresensiKelasResponse(
 data class CreatePresensiGymResponse(
     val message: String,
     val data: PresensiGym
+)
+
+data class CreatePresensiInsResponse(
+    val message: String,
+    val data: PresensiInstruktur
 )

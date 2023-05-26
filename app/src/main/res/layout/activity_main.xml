@@ -162,11 +162,21 @@
                 app:backgroundTint="@color/loginButton"
                 app:cornerRadius="20dp" />
 
+            <ImageButton
+                android:id="@+id/btnInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_baseline_info_24"
+                app:tint="#3930DF"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_weight="1"
                 android:background="@android:color/darker_gray" />
+
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnManager"

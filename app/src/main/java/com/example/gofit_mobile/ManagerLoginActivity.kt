@@ -70,7 +70,7 @@ class ManagerLoginActivity : AppCompatActivity() {
                             .apply()
 
                         if(responseBody.user.ROLE_PEGAWAI == "mo"){
-                            val intent = Intent(this@ManagerLoginActivity, HomeActivityIns::class.java)
+                            val intent = Intent(this@ManagerLoginActivity, HomeActivityMo::class.java)
                             startActivity(intent)
                             finish()
                         }else{

@@ -1,4 +1,4 @@
-package com.example.gofit_mobile.ui_mem
+package com.example.gofit_mobile.ui_mo
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,23 +11,24 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gofit_mobile.R
-import com.example.gofit_mobile.adapters.AdapterPresensiGym
+import com.example.gofit_mobile.adapters.AdapterKonfirmasiPresensiKelas
+import com.example.gofit_mobile.adapters.AdapterPresensiInstruktur
 import com.example.gofit_mobile.api.ApiConfig
 import com.example.gofit_mobile.api.GeneralResponse
-import com.example.gofit_mobile.api.PerizinanResponse
-import com.example.gofit_mobile.api.PresensiGymResponse
-import com.example.gofit_mobile.model.Perizinan
-import com.example.gofit_mobile.model.PresensiGym
-import com.example.gofit_mobile.ui_ins.AddPerizinanActivity
+import com.example.gofit_mobile.api.PresensiInsResponse
+import com.example.gofit_mobile.api.PresensiKelasResponse
+import com.example.gofit_mobile.model.PresensiInstruktur
+import com.example.gofit_mobile.model.PresensiKelas
+import com.example.gofit_mobile.ui_mem.AddPresensiGymActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class FragmentPresensiGym : Fragment() {
+class FragmentPresensiInstruktur : Fragment() {
 
-    private var adapter: AdapterPresensiGym? = null
+    private var adapter: AdapterPresensiInstruktur? = null
     private var id_mem:String? = null
 
 
@@ -41,55 +42,57 @@ class FragmentPresensiGym : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_presensi_gym, container, false)
+        return inflater.inflate(R.layout.fragment_presensi_instruktur, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        id_mem = requireContext().getSharedPreferences("TOKEN", AppCompatActivity.MODE_PRIVATE)
-            .getString("NO_MEM", null)
+//        id_mem = requireContext().getSharedPreferences("TOKEN", AppCompatActivity.MODE_PRIVATE)
+//            .getString("NO_MEM", null)
         // get data kemudian masukin di recycler view
         setUpRv()
+
         val btnAdd = view.findViewById<FloatingActionButton>(R.id.fab_add)
 
         btnAdd.setOnClickListener() {
-            val intent = Intent(requireActivity(), AddPresensiGymActivity::class.java)
+            val intent = Intent(requireActivity(), AddPresensiInsActivity::class.java)
             startActivity(intent)
         }
+
     }
 
     override fun onStart() {
         super.onStart()
 
-        getData(id_mem!!)
+        getData()
     }
 
-    private fun getData(id: String) {
+    private fun getData() {
         val client = ApiConfig.getApiService()
 
-        client.getPresensiGym(id).enqueue(object : Callback<PresensiGymResponse> {
+        client.getPresensiIns().enqueue(object : Callback<PresensiInsResponse> {
             override fun onResponse(
-                call: Call<PresensiGymResponse>,
-                response: Response<PresensiGymResponse>
+                call: Call<PresensiInsResponse>,
+                response: Response<PresensiInsResponse>
             ) {
                 if (response.isSuccessful) {
                     // Response code bukan 401, 500, ...
                     val responseBody = response.body()
                     if (responseBody != null) {
                         //tampil data
-                        val dataPresensiKelas = responseBody.data
-                        adapter?.setData(dataPresensiKelas)
+                        val dataPresensiInstruktur = responseBody.data
+                        adapter?.setData(dataPresensiInstruktur)
                     }
                 }
 
             }
 
-            override fun onFailure(call: Call<PresensiGymResponse>, t: Throwable) {
+            override fun onFailure(call: Call<PresensiInsResponse>, t: Throwable) {
                 t.printStackTrace()
                 Toast.makeText(
                     requireContext(),
-                    "Gagal Get Data Presensi Gym Member",
+                    "Gagal Get Data Presensi Kelas Member",
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -97,15 +100,15 @@ class FragmentPresensiGym : Fragment() {
     }
 
     private fun setUpRv() {
-        val rvPresensiGym = view?.findViewById<RecyclerView>(R.id.rv_presensigym)
-        adapter = AdapterPresensiGym(arrayListOf(), object : AdapterPresensiGym.onItemCallback {
-            override fun onClick(item: PresensiGym) {
+        val rvPresensiInstruktur = view?.findViewById<RecyclerView>(R.id.rv_presensiinstruktur)
+        adapter = AdapterPresensiInstruktur(arrayListOf(), object : AdapterPresensiInstruktur.onItemCallback {
+            override fun onClick(item: PresensiInstruktur) {
                 val materialAlertDialogBuilder = MaterialAlertDialogBuilder(requireContext())
-                materialAlertDialogBuilder.setTitle("Konfirmasi")
-                    .setMessage("Apakah anda yakin ingin membatalkan booking gym ini?")
-                    .setNegativeButton("Batal", null)
-                    .setPositiveButton("Hapus") { _, _ ->
-                        deletePresensiGym(item.NO_PRESENSIG)
+                materialAlertDialogBuilder.setTitle("Konfirmasi Kelas Selesai")
+                    .setMessage("Apakah Instruktur Sudah Selesai?")
+                    .setNegativeButton("Belum", null)
+                    .setPositiveButton("Sudah") { _, _ ->
+                        konfPresensiIns(item.ID_PRESENSII)
                     }
                     .show()
 
@@ -113,30 +116,31 @@ class FragmentPresensiGym : Fragment() {
             }
 
         })
-        rvPresensiGym?.layoutManager = LinearLayoutManager(requireContext())
-        rvPresensiGym?.adapter = adapter
+        rvPresensiInstruktur?.layoutManager = LinearLayoutManager(requireContext())
+        rvPresensiInstruktur?.adapter = adapter
     }
 
-    private fun deletePresensiGym(id:String){
+    private fun konfPresensiIns(id:String){
         val client = ApiConfig.getApiService()
 
-        client.hapusPresensiGym(id).enqueue(object: Callback<GeneralResponse>{
+        client.selesai(id).enqueue(object: Callback<GeneralResponse> {
             override fun onResponse(
                 call: Call<GeneralResponse>,
                 response: Response<GeneralResponse>
             ) {
                 if (response.isSuccessful) {
-                    getData(id_mem!!)
+                    getData()
                 }
             }
 
             override fun onFailure(call: Call<GeneralResponse>, t: Throwable) {
                 Toast.makeText(
                     requireContext(),
-                    "Gagal Membatalkan Data Bookin Gym Member",
+                    "Gagal Menyelesaikan Kelas",
                     Toast.LENGTH_SHORT
                 ).show()
             }
         })
     }
+
 }

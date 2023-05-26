@@ -1,0 +1,165 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/general_info_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="General Information"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/name_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO-FIT"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/address_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jl. CentralPark No.10 Yogyakarta"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+
+
+    <TextView
+        android:id="@+id/pricelist_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:text="Pricelist:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/activation_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="- Aktivasi = Rp.3.000.000,-" />
+
+    <TextView
+        android:id="@+id/reg_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="- Kelas Reguler = Rp.150.000,-" />
+
+    <TextView
+        android:id="@+id/vip_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="- Kelas Premium = Rp.200.000,-" />
+
+    <TextView
+        android:id="@+id/schedule_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:text="Class Schedule:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tuesday_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="- Tuesday:"/>
+        <TextView
+            android:id="@+id/tuesday_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:text="Sesi 1 : Cardio Barre" />
+        <TextView
+            android:id="@+id/tuesday_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:text="Sesi 2 : Belly Dance" />
+        <TextView
+            android:id="@+id/tuesday_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:text="Sesi 3 : Yoga" />
+
+    <TextView
+        android:id="@+id/wed_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:text="- Wednesday:"/>
+    <TextView
+        android:id="@+id/wed_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Sesi 1 : Belly Dance" />
+    <TextView
+        android:id="@+id/wed_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Sesi 2 : Calisthenics"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/wed_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Sesi 3 : -" />
+
+    <TextView
+        android:id="@+id/sat_schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:text="- Saturday:"/>
+    <TextView
+        android:id="@+id/sat_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Sesi 1 : -" />
+    <TextView
+        android:id="@+id/sat_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Sesi 2 : Zumba" />
+    <TextView
+        android:id="@+id/sat_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Sesi 3 : Body Combat"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/bintang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:layout_marginStart="170dp"
+        android:text="*) Kelas premium dicetak tebal"/>
+    <TextView
+        android:id="@+id/bintang2"
+        android:layout_marginStart="170dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*) Update terakhir : 23 Mei 2023"/>
+
+</LinearLayout>

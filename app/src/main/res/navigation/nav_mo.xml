@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_mo"
+    app:startDestination="@id/fragmentPresensiInstruktur">
+
+
+    <fragment
+        android:id="@+id/fragmentPresensiInstruktur"
+        android:name="com.example.gofit_mobile.ui_mo.FragmentPresensiInstruktur"
+        android:label="FragmentPresensiInstruktur" />
+</navigation>

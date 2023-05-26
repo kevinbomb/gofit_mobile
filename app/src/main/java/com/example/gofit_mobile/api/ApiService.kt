@@ -15,7 +15,7 @@ object ApiConfig {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.15/apigofit/public/api/")
+            .baseUrl("http://192.168.1.31/apigofit/public/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
@@ -92,6 +92,18 @@ interface ApiService{
         @Path("id") id: String
     ): Call<GeneralResponse>
 
+    @PUT("konfPresensiKelas/{id}")
+    @FormUrlEncoded
+    fun konfirmasiPresensiKelas(
+        @Path("id") id: String,
+        @Field("ID_INSTRUKTUR") tgl: Long
+    ): Call<GeneralResponse>
+
+    @PUT("absPresensiKelas/{id}")
+    fun absPresensiKelas(
+        @Path("id") id: String
+    ): Call<GeneralResponse>
+
     @POST("presensiKelas")
     @FormUrlEncoded
     fun createPresensiKelas (
@@ -111,4 +123,37 @@ interface ApiService{
         @Field("TANGGAL_PRESENSIG") tgl: String,
         @Field("SLOT_WAKTU_PRESENSIG") wkt: String,
         ): Call<CreatePresensiGymResponse>
+
+    @DELETE("presensiGym/{id}")
+    fun hapusPresensiGym(
+        @Path("id") id: String
+    ): Call<GeneralResponse>
+
+    @GET("presensiKelas")
+    fun getPresensiKelasAll(
+    ): Call<PresensiKelasResponse>
+
+    @GET("presensiKelasToday")
+    fun getPresensiKelasToday(
+    ): Call<PresensiKelasResponse>
+
+    @GET("presensiIongoing")
+    fun getPresensiIns(
+    ): Call<PresensiInsResponse>
+
+    @POST("presensiI")
+    @FormUrlEncoded
+    fun createPresensiIns (
+        @Field("ID_INSTRUKTUR") tgl: String
+    ): Call<CreatePresensiInsResponse>
+
+    @PUT("presensiIselesai/{id}")
+    fun selesai(
+        @Path("id") id: String
+    ): Call<GeneralResponse>
+
+    @GET("member/{id}")
+    fun showMember(
+        @Path("id") id: String
+    ): Call<MemberResponse>
 }

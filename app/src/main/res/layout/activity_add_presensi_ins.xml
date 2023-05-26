@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context=".ui_mem.AddPresensiGymActivity">
+    tools:context=".ui_mo.AddPresensiInsActivity">
 
     <ScrollView
         android:id="@+id/scroll_view"
@@ -27,8 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:inputType="none"
-                android:text="Tambah Booking Gym"/>
+                android:text="Tambah Presensi Instruktur"/>
 
             <!--            <com.google.android.material.textfield.TextInputLayout-->
             <!--                android:id="@+id/layout_tanggal"-->
@@ -48,57 +47,22 @@
             <!--            </com.google.android.material.textfield.TextInputLayout>-->
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/inputLayoutTanggal"
+                android:id="@+id/inputLayoutIdIns"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="8dp"
-                android:hint="Tanggal Booking"
+                android:hint="ID Instruktur"
                 app:errorEnabled="true"
                 android:layout_marginBottom="0dp"
                 >
 
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etTanggal"
+                    android:id="@+id/etIdIns"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:id="@+id/layout_keterangan"-->
-<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginHorizontal="16dp"-->
-<!--                android:layout_marginTop="8dp"-->
-<!--                android:hint="Keterangan">-->
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:id="@+id/et_keterangan"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:minLines="4"-->
-<!--                    android:inputType="textMultiLine"/>-->
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/inputLayoutSession"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:hint="Pilih Sesi"
-                app:errorEnabled="true"
-                android:layout_marginBottom="0dp">
-
-                <AutoCompleteTextView
-                    android:id="@+id/etSession"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
-
             </com.google.android.material.textfield.TextInputLayout>
 
 

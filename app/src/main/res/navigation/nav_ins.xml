@@ -8,4 +8,8 @@
         android:id="@+id/fragmentPerizinan"
         android:name="com.example.gofit_mobile.ui_ins.FragmentPerizinan"
         android:label="FragmentPerizinan" />
+    <fragment
+        android:id="@+id/fragmentKonfirmasiPresensiKelas"
+        android:name="FragmentKonfirmasiPresensiKelas"
+        android:label="FragmentKonfirmasiPresensiKelas" />
 </navigation>

@@ -19,7 +19,7 @@ class AddPresensiGymActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddPresensiGymBinding
     private lateinit var etSession: AutoCompleteTextView
-    private val sessionOptions = arrayOf("7-9", "9-11", "11-13", "13-15")
+    private val sessionOptions = arrayOf("7-9", "9-11", "11-13", "13-15", "15-17", "17-19")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

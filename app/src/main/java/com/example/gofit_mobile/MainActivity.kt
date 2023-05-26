@@ -40,6 +40,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        binding.btnInfo.setOnClickListener{
+            val intent = Intent(this@MainActivity, InfoActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun doLogin(no_member: String, password: String) {
