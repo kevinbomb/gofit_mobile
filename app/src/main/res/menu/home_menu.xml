@@ -6,7 +6,7 @@
     <item android:id="@+id/fragmentKonfirmasiPresensiKelas"
         android:icon="@drawable/ic_baseline_checklist_24"
         android:title="Presensi Kelas"/>
-    <item android:id="@+id/menuProfil"
+    <item android:id="@+id/fragmentProfileIns"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="Profil"/>
 </menu>

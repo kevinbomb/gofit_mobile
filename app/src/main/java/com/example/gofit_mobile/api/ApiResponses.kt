@@ -70,3 +70,8 @@ data class CreatePresensiInsResponse(
     val message: String,
     val data: PresensiInstruktur
 )
+
+data class ProfileInsResponse(
+    val success: Boolean,
+    val data: PresensiInstruktur
+)

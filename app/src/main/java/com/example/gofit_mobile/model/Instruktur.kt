@@ -6,4 +6,5 @@ data class Instruktur (
     val NAMA_INSTRUKTUR: String,
     val ALAMAT_INSTRUKTUR: String,
     val NO_TELP_INSTRUKTUR: String,
+    val GAJI_INSTRUKTUR: String
 )

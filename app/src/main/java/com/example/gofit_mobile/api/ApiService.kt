@@ -15,7 +15,7 @@ object ApiConfig {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.31/apigofit/public/api/")
+            .baseUrl("http://192.168.1.23/apigofit/public/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
@@ -156,4 +156,10 @@ interface ApiService{
     fun showMember(
         @Path("id") id: String
     ): Call<MemberResponse>
+
+    @POST("presensiI1")
+    @FormUrlEncoded
+    fun getProfileIns (
+        @Field("ID_INSTRUKTUR") tgl: String
+    ): Call<ProfileInsResponse>
 }
