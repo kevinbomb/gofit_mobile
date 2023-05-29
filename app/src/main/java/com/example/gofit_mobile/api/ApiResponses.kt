@@ -75,3 +75,8 @@ data class ProfileInsResponse(
     val success: Boolean,
     val data: PresensiInstruktur
 )
+
+data class TerlambatResponse(
+    val success: Boolean,
+    val data: String
+)

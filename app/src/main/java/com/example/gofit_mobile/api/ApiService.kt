@@ -162,4 +162,9 @@ interface ApiService{
     fun getProfileIns (
         @Field("ID_INSTRUKTUR") tgl: String
     ): Call<ProfileInsResponse>
+
+    @GET("presensiIterlambat/{id}")
+    fun getTerlambat(
+        @Path("id") id: String
+    ): Call<TerlambatResponse>
 }

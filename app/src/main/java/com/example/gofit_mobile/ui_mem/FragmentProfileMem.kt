@@ -46,8 +46,12 @@ class FragmentProfileMem : Fragment() {
         val btnHistory = binding.buttonHistory
 
 //        btnHistory.setOnClickListener() {
-//            val intent = Intent(requireActivity(), HistoryMemberActivity::class.java)
-//            startActivity(intent)
+//            val fragment = FragmentPresensiKelas()
+//            val fragmentManager = requireActivity().supportFragmentManager
+//            val fragmentTransaction = fragmentManager.beginTransaction()
+//            fragmentTransaction.add(R.id.cv_presensikelas, fragment) // Replace "container" with the ID of the container view in your layout
+//            fragmentTransaction.addToBackStack(null) // Add the transaction to the back stack
+//            fragmentTransaction.commit()
 //        }
     }
 
