@@ -100,7 +100,7 @@
                         android:id="@+id/tvSaldoValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="500.000"
+                        android:text="100.000"
                         android:textSize="14sp" />
 
                 </LinearLayout>

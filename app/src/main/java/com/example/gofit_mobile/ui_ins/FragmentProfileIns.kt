@@ -8,14 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.gofit_mobile.R
-import com.example.gofit_mobile.api.ApiConfig
-import com.example.gofit_mobile.api.MemberResponse
-import com.example.gofit_mobile.api.PresensiKelasResponse
-import com.example.gofit_mobile.api.ProfileInsResponse
+import com.example.gofit_mobile.api.*
 import com.example.gofit_mobile.databinding.FragmentProfileInsBinding
-import com.example.gofit_mobile.databinding.FragmentProfileMemBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.example.gofit_mobile.ui_ins.HistoryInsActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -47,16 +42,17 @@ class FragmentProfileIns : Fragment() {
 
         val btnHistory = binding.buttonHistory
 
-//        btnHistory.setOnClickListener() {
-//            val intent = Intent(requireActivity(), HistoryMemberActivity::class.java)
-//            startActivity(intent)
-//        }
+        btnHistory.setOnClickListener() {
+            val intent = Intent(requireActivity(), HistoryInsActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onStart() {
         super.onStart()
 
         getData(id_ins.toString())
+        getTerlambat(id_ins.toString())
     }
 
     private fun getData(id: String) {
@@ -73,9 +69,8 @@ class FragmentProfileIns : Fragment() {
                         //tampil data
                         val Ins = responseBody.data
                         binding.tvUsername.text = Ins.instruktur.NAMA_INSTRUKTUR
-                        binding.tvEmail.text = Ins.instruktur.NO_TELP_INSTRUKTUR
-//                        binding.tvSaldoValue.text =
-                        binding.tvPaketValue.text = Ins.instruktur.GAJI_INSTRUKTUR
+                        binding.tvEmail.text = Ins.instruktur.ALAMAT_INSTRUKTUR
+                        binding.tvSaldoValue.text = Ins.instruktur.GAJI_INSTRUKTUR
                         binding.tvDate.text = Ins.ID_INSTRUKTUR
                         binding.tvPhone.text = Ins.instruktur.NO_TELP_INSTRUKTUR
                     }
@@ -84,6 +79,36 @@ class FragmentProfileIns : Fragment() {
             }
 
             override fun onFailure(call: Call<ProfileInsResponse>, t: Throwable) {
+                t.printStackTrace()
+                Toast.makeText(
+                    requireContext(),
+                    "Gagal Get Data Member Login",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        })
+    }
+
+    private fun getTerlambat(id: String) {
+        val client = ApiConfig.getApiService()
+        client.getTerlambat(id).enqueue(object : Callback<TerlambatResponse> {
+            override fun onResponse(
+                call: Call<TerlambatResponse>,
+                response: Response<TerlambatResponse>
+            ) {
+                if (response.isSuccessful) {
+                    // Response code bukan 401, 500, ...
+                    val responseBody = response.body()
+                    if (responseBody != null) {
+                        //tampil data
+                        val Ins = responseBody.data
+                        binding.tvPaketValue.text = Ins
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<TerlambatResponse>, t: Throwable) {
                 t.printStackTrace()
                 Toast.makeText(
                     requireContext(),

@@ -5,5 +5,7 @@ data class PresensiInstruktur (
     val ID_INSTRUKTUR: String,
     val instruktur: Instruktur,
     val WAKTU_MULAI: String,
-    val WAKTU_SELESAI: String
+    val WAKTU_SELESAI: String,
+    val TERLAMBAT: String,
+    val created_at: String
     )

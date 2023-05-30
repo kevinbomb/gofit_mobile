@@ -7,6 +7,7 @@ data class PresensiKelas (
     val NAMA_KELAS: String,
     val TANGGAL_PRESENSIK_DIBUAT: String,
     val TANGGAL_PRESENSIK: String,
+    val WAKTU_PRESENSIK: String,
     val KEHADIRAN: Int,
     val TARIF_PRESENSIK: Long
 )

@@ -15,7 +15,7 @@ object ApiConfig {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.23/apigofit/public/api/")
+            .baseUrl("http://192.168.10.147/apigofit/public/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
@@ -167,4 +167,9 @@ interface ApiService{
     fun getTerlambat(
         @Path("id") id: String
     ): Call<TerlambatResponse>
+
+    @GET("presensiI/{id}")
+    fun getHistoryIns(
+        @Path("id") id: Long
+    ): Call<PresensiInsResponse>
 }

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gofit_mobile.HomeActivityMem
 import com.example.gofit_mobile.R
 import com.example.gofit_mobile.api.ApiConfig
 import com.example.gofit_mobile.api.MemberResponse
@@ -44,15 +45,16 @@ class FragmentProfileMem : Fragment() {
 
 
         val btnHistory = binding.buttonHistory
+        val btnHistoryGym = binding.buttonHistoryGym
 
-//        btnHistory.setOnClickListener() {
-//            val fragment = FragmentPresensiKelas()
-//            val fragmentManager = requireActivity().supportFragmentManager
-//            val fragmentTransaction = fragmentManager.beginTransaction()
-//            fragmentTransaction.add(R.id.cv_presensikelas, fragment) // Replace "container" with the ID of the container view in your layout
-//            fragmentTransaction.addToBackStack(null) // Add the transaction to the back stack
-//            fragmentTransaction.commit()
-//        }
+        btnHistory.setOnClickListener() {
+            val intent = Intent(requireActivity(), HistoryMemActivity::class.java)
+            startActivity(intent)
+        }
+        btnHistoryGym.setOnClickListener() {
+            val intent = Intent(requireActivity(), HistoryMemGymActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onStart() {

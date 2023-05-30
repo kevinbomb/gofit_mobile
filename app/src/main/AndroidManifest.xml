@@ -15,6 +15,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui_ins.HistoryInsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui_mem.HistoryMemGymActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui_mem.HistoryMemActivity"
+            android:exported="false" />
+        <activity
             android:name=".InfoActivity"
             android:exported="false" />
         <activity
